@@ -675,7 +675,31 @@ $wp_customize -> add_panel(
                 'type'           => 'text'
               )
             );
+
+            $wp_customize->add_setting(
+              'fp_quote_style',
+              array(
+              'default'     => 'custom-quote-style-1',
+              'type'        => 'theme_mod'
+              )
+            );
           
+            $wp_customize->add_control(
+              'fp_quote_style',
+              array(
+                'label'          => 'Style',
+                'description'    => 'Style de la citation',
+                'section'        => 'fp_quote',
+                'setting'        => 'fp_quote_style',
+                'type'           => 'radio',
+                'choices'        => array(
+                                      'custom-quote-style-1' => 'Style 1',
+                                      'custom-quote-style-2' => 'Style 2',
+                                      'custom-quote-style-3' => 'Style 3'
+                   )
+              )
+            ); 
+
 $wp_customize->add_section(
     'footer',
       array(
